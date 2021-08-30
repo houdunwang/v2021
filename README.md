@@ -1,37 +1,55 @@
-# houdunren.com 2021年视频教程代码 
+## 后盾人 / 2021年视频教程代码
 
-#### 介绍
-后盾人2021年视频教程代码
+本项目为视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
-#### 软件架构
-软件架构说明
+> 更多视频教程请访问 [ houdunren.com](houdunren.com) 学习
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+![IMG_7099](./assets/IMG_7099.JPG)
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+向军老师每天更新视频，我们已经坚持很久了
+
+![xj-small](./assets/xj-small.png)
+
+
+
+
+
+## 历史仓库
+
+| 说明                      | 仓库地址                                        |
+| ------------------------- | ----------------------------------------------- |
+| 2021年视频教程代码        | https://gitee.com/houdunwang/houdunren.com-2021 |
+| 2019~2020年视频教程代码   | https://gitee.com/houdunren/code                |
+| 2015~2018年前视频教程代码 | https://gitee.com/houdunwang/video              |
+
+
+
+## 晚八点直播
+
+我们会在晚上八点直播（注：特殊情况会请假），非常感谢大家的光临。
+
+| <img src="./assets/抖音.png" alt="抖音" style="height:500px" /> | <img src="./assets/bilibli.jpg" alt="bilibli" style="height:500px" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+
+
+
+## 目录说明
+
+| 目录     | 说明             |
+| -------- | ---------------- |
+| live     | 晚八点直播代码   |
+| video    | 视频代码         |
+| material | 图片、模板等素材 |
+
+
+
+## 编码记录
+
+下面是近七天向军大叔的编码时间与语言 
+
+| **编码时间**                                                 | **开发语言**                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="assets/fa3cbd8c-e1b5-4f8a-bf02-b5c1d0e3a8b3.png" alt="https://www.houdunren.com/"  /> | <img src="assets/f083f191-971f-48c1-a1c1-0a8123ece873.png" alt="https://www.houdunren.com/" /> |
+
