@@ -8,7 +8,7 @@
 
 
 
-向军老师每天更新视频，我们已经坚持很久了
+向军老师每周更新视频，我们已经坚持很久了
 
 ![xj-small](./assets/xj-small.png)
 
@@ -49,7 +49,11 @@
 
 下面是近七天向军大叔的编码时间与语言 
 
+## 编码记录
+
+下面是近七天向军大叔的编码时间与语言 
+
 | **编码时间**                                                 | **开发语言**                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="assets/fa3cbd8c-e1b5-4f8a-bf02-b5c1d0e3a8b3.png" alt="https://www.houdunren.com/"  /> | <img src="assets/f083f191-971f-48c1-a1c1-0a8123ece873.png" alt="https://www.houdunren.com/" /> |
+| <img src="https://wakatime.com/share/@houdunren/e20f8fb4-dc01-4898-8ea8-0b6eb0673e5e.png"  /> | <img src="https://wakatime.com/share/@houdunren/32b9163d-c433-47c6-a9aa-e92ab41a52a3.png" /> |
 
