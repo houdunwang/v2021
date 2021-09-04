@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li><span></span><span></span></li>
+        <li><span></span><span></span></li>
+        <li>
+          <span></span><span></span>
+          <div>后盾人</div>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      function all(el, prototype) {
+        const nodes = []
+        Array.from(el.childNodes).forEach(node => {
+          //   console.log(node.__proto__)
+          //   console.log(Object.getPrototypeOf(node))
+
+          if (node.nodeType == 1) nodes.push(...all(node, prototype))
+          if (node instanceof prototype) {
+            nodes.push(node)
+          }
+        })
+        return nodes
+      }
+
+      console.log(all(document.body, Text))
+
+      //   const div = document.querySelector('#app')
+      //   console.log(div.__proto__ == HTMLDivElement.prototype)
+      //   console.log(div instanceof HTMLDivElement)
+    </script>
+  </body>
+</html>

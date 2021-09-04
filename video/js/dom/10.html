@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <!-- 后盾人 -->
+    后盾人 houdunren.com
+    <div id="app">
+      <ul>
+        <li>
+          <span></span>
+          <span>
+            <!-- 向军 -->
+          </span>
+        </li>
+        <li><span></span><span></span></li>
+        <li><span></span><span></span></li>
+      </ul>
+    </div>
+
+    <script>
+      function all(el, nodeType = 1) {
+        const nodes = []
+
+        Array.from(el.childNodes).map(node => {
+          if (node.nodeType == nodeType) nodes.push(node)
+
+          if (node.nodeType == 1) nodes.push(...all(node, nodeType))
+        })
+        return nodes
+      }
+      console.log(all(document.body))
+    </script>
+  </body>
+</html>

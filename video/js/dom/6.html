@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <h2 onclick="this.color('red')">houdunren.com</h2>
+    <h1 onclick="this.hide()">向军</h1>
+
+    <div onclick="this.color('blue')">this is div element</div>
+    <script>
+      const h2 = document.querySelector('h2')
+      const h1 = document.querySelector('h1')
+
+      Node.prototype = Object.assign(Node.prototype, {
+        color(color) {
+          this.style.color = color
+        },
+        hide() {
+          this.style.display = 'none'
+        },
+      })
+
+      console.log(h2.__proto__)
+
+      //   console.log(h1.__proto__)
+    </script>
+  </body>
+</html>

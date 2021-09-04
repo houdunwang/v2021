@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <h2 id="xj">houdunren.com</h2>
+    <script>
+      const hd = document.querySelector('h2')
+      Object.assign(hd, {
+        innerHTML: '后盾人',
+        color: 'red',
+        onclick() {
+          this.style.color = this.color
+        },
+      })
+      Object.assign(hd.style, {
+        fontSize: '100px',
+        color: 'blue',
+        border: 'solid 10px #ddd',
+      })
+    </script>
+  </body>
+</html>
