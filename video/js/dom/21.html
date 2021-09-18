@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <div>
+      <span>houdunren.com</span>
+      <h2>
+        <span>houdunwang.com</span>
+        <div>
+          <main>
+            <span> 向军 </span>
+          </main>
+        </div>
+      </h2>
+    </div>
+
+    <script>
+      function getChildNodeByName(node, name) {
+        const items = []
+        ;[...node.childNodes].map(node => {
+          if (node.tagName == name.toUpperCase()) items.push(node)
+          items.push(...getChildNodeByName(node, name))
+        })
+
+        return items
+      }
+      const nodes = getChildNodeByName(document, 'body')
+
+      console.log(nodes)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><span></span></li>
+      </ul>
+    </div>
+    <script>
+      function parentNodes(node) {
+        const nodes = new Array(node.parentNode)
+        if (node.parentNode) nodes.push(...parentNodes(node.parentNode))
+        return nodes
+      }
+      const span = document.querySelector('span')
+      console.log(parentNodes(span))
+    </script>
+  </body>
+</html>

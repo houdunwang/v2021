@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <h1></h1>
+        <span></span>
+      </li>
+    </ul>
+    <script>
+      const ul = document.querySelector('ul')
+      const h1 = ul.childNodes[1].childNodes[1]
+      const span = h1.nextSibling.nextSibling
+      // console.log(span.previousSibling.previousSibling)
+
+      // console.log(document.documentElement.parentNode == document)
+      console.log(document.childNodes)
+    </script>
+  </body>
+</html>

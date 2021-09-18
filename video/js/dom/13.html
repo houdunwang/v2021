@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <div id="app">
+      后盾人
+      <!-- houdunren.com -->
+    </div>
+  </body>
+  <script>
+    const app = document.querySelector('#app')
+    // console.log(app.nodeValue)
+    console.log(app.childNodes[0].data)
+    console.log(app.childNodes[1].data)
+    console.log(app.attributes.id.data)
+  </script>
+</html>

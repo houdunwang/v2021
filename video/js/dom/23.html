@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <div>
+      <ul class="app">
+        <li class="hd item">houdunren.com</li>
+        <li class="item">后盾人</li>
+        <li class="hd">
+          向军
+          <div class="hd"></div>
+        </li>
+      </ul>
+    </div>
+    <script>
+      function getTagByClass(className, tag = document) {
+        const items = []
+        Array.from(tag.children).map(el => {
+          if (el.className.includes(className)) items.push(el)
+          items.push(...getTagByClass(className, el))
+        })
+        return items
+      }
+
+      console.log(getTagByClass('app'))
+    </script>
+  </body>
+</html>

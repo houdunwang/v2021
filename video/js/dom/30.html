@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body class="app">
+    <div class="hd">
+      <ul id="app" class="hd">
+        <li>houdunren</li>
+        <li>向军大叔</li>
+        <li name="houdunwang">houdunwang.com</li>
+      </ul>
+    </div>
+    <script>
+      //   const tags = Array.from(document.querySelectorAll('li')).filter(tag => {
+      //     return !tag.matches('[name]')
+      //   })
+      //   console.log(tags)
+
+      console.log(document.querySelector('li').closest('.app'))
+    </script>
+  </body>
+</html>

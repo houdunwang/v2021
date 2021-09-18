@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li><span></span><span></span></li>
+        <li><span></span><span></span></li>
+        <li><span></span><span></span></li>
+      </ul>
+    </div>
+    <script>
+      function tree(el) {
+        return Array.from(el.childNodes)
+          .filter(node => node.tagName)
+          .map(node => ({
+            name: node.nodeName,
+            children: tree(node),
+          }))
+      }
+      console.log(tree(document.getElementById('app')))
+    </script>
+  </body>
+</html>

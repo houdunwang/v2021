@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <h2></h2>
+    <h2></h2>
+    <button class="" type="button" onclick="add()">insert</button>
+    <script>
+      const nodes = document.getElementsByTagName('h2')
+      const clone = Array.prototype.slice.call(nodes)
+      console.log(nodes.length)
+      function add() {
+        document.body.insertAdjacentHTML('beforeend', '<h2>houdunren.com</h2>')
+
+        console.log(nodes.length)
+
+        console.log(clone.length)
+      }
+    </script>
+  </body>
+</html>

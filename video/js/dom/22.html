@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人 - houdunren.com</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="houdunren" data="hd">houdunren.com</div>
+      <div class="houdunwang">
+        houdunwang.com
+        <span>向军</span>
+      </div>
+      <div class="xiangjun"><!-- 向军大叔 --></div>
+    </div>
+
+    <script>
+      const app = document.querySelector('#app')
+      //   console.log(app)
+      console.log(app.children)
+      console.log(app.firstElementChild)
+      console.log(app.lastElementChild)
+      console.log(app.parentElement.parentElement.parentNode)
+
+      const houdunwang = document.querySelector('.houdunwang')
+      console.log(houdunwang.nextElementSibling)
+    </script>
+  </body>
+</html>
