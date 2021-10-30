@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.0-beta.7/vue.global.prod.js"></script>
+    <title>后盾人</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="desc">减少</button>
+      {{num}} <button @click="add">增加</button>
+      <div style="background-color: red; color: white" v-if="error">{{error}}</div>
+    </div>
+    <script src="hd.js"></script>
+  </body>
+</html>
