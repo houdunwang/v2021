@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.0-beta.7/vue.global.prod.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <todo />
+    </div>
+    <script>
+      const todo = {
+        data() {
+          return { title: '后盾人' }
+        },
+        template: `<div>{{title}}`,
+      }
+      const app = Vue.createApp({
+        components: { todo },
+      })
+      app.mount('#app')
+    </script>
+  </body>
+</html>
