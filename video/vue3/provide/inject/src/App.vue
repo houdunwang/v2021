@@ -7,7 +7,12 @@
       @click="currentComponent = component.name"
     >{{ component.title }}</div>
   </main>
-  <component :is="currentComponent" />
+  <button @click="callComponent">调用组件</button>
+  <!-- <input ref="input" /> -->
+
+  <keep-alive>
+    <component :is="currentComponent" ref="component" />
+  </keep-alive>
 </template>
 
 <script>
@@ -19,6 +24,12 @@ export default {
   components: { Site, Wexin },
   provide() {
     return { webname: computed(() => this.teacher), config: this.config }
+  },
+  methods: {
+    callComponent() {
+      // this.$refs.input.value = "向军大叔";
+      this.$refs.component.show()
+    }
   },
   data() {
     return {
