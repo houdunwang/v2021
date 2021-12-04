@@ -19,11 +19,11 @@
 ## 历史仓库
 下面是每年我们录制视频教程的代码仓库地址（非常早的就没有罗列了）。大家可以结合视频再看代码，这样学习起来就非常轻松了。
 
-| 年份                      | 仓库地址                                       |
-| ------------------------- | ---------------------------------------------- |
-| 2021年视频教程代码        | https://gitee.com/houdunren/houdunren.com-2021 |
-| 2019~2020年视频教程代码   | https://gitee.com/houdunren/houdunren.com-2020 |
-| 2015~2018年前视频教程代码 | https://gitee.com/houdunren/houdunren.com-2015 |
+| 年份                      | 仓库地址                                       | GitHub                              |
+| ------------------------- | ---------------------------------------------- | ----------------------------------- |
+| 2021年视频教程代码        | https://gitee.com/houdunren/houdunren.com-2021 |                                     |
+| 2019~2020年视频教程代码   | https://gitee.com/houdunren/houdunren.com-2020 | https://github.com/houdunwang/v2020 |
+| 2015~2018年前视频教程代码 | https://gitee.com/houdunren/houdunren.com-2015 | https://github.com/houdunwang/v2015 |
 
 
 
