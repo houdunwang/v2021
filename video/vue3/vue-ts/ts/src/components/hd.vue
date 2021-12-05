@@ -1,12 +1,9 @@
 <script setup lang="ts">
+import { all, find } from '../apis/article'
 
-import useApi from '../composables/useApi'
+const { response: articles } = await all()
 
-const { response } = await useApi(`http://127.0.0.1:3002/articles`, {
-  method: 'post'
-});
-
-
+const { response: article } = await find(1)
 
 
 // import { ref } from 'vue';
@@ -22,7 +19,9 @@ const { response } = await useApi(`http://127.0.0.1:3002/articles`, {
 </script>
 
 <template>
-  {{ response?.title }}
+  <div v-for="article of articles" :key="article.id">{{ article.title }}</div>
+  <hr />
+  {{ article }}
   <!-- <button @click="state = !state">toggle</button>
   <div v-if="state" style="border:solid 2px red">{{ article.title }}</div>-->
 </template>
