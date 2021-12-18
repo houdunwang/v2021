@@ -1,15 +1,7 @@
 import { RouteRecordRaw, viewDepthKey } from 'vue-router'
-// {
-// 	path:'/admin'
-// 	component:,
-// 	children:[
-// {path:'/admin/user' }
-// 	]
-// }
 
 const layouts = import.meta.globEager('../layouts/*.vue')
 const views = import.meta.globEager('../views/**/*.vue')
-// console.log(views)
 
 function getRoutes() {
   const layoutRoutes = [] as RouteRecordRaw[]
@@ -28,7 +20,6 @@ function getChildrenRoutes(layoutRoute: RouteRecordRaw) {
   Object.entries(views).forEach(([file, module]) => {
     if (file.includes(`../views/${layoutRoute.name as string}`)) {
       const route = getRouteByModule(file, module)
-      console.log(route)
       routes.push(route)
     }
   })
