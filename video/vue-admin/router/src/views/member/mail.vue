@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
-<template>user..</template>
+<template>member/mail.vue</template>
 
 <style lang="scss"></style>
