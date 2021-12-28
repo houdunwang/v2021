@@ -4,8 +4,3 @@
 
 <style lang="scss"></style>
 
-<script>
-  export default {
-    route: { path: '/a/:id' },
-  }
-</script>
