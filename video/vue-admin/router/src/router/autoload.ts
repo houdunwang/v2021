@@ -1,5 +1,5 @@
 import { Router, RouteRecordRaw, viewDepthKey } from 'vue-router'
-import { env } from '@/utils/helper'
+import { env } from '@/utils'
 
 const layouts = import.meta.globEager('../layouts/*.vue')
 const views = import.meta.globEager('../views/**/*.vue')

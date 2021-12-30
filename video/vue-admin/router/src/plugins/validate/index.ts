@@ -6,6 +6,7 @@ import yup from './yup'
 loadLocaleFromURL('https://unpkg.com/@vee-validate/i18n@4.1.0/dist/locale/zh_CN.json');
 
 veeValidate.configure({
+	// validateOnInput: true,
 	generateMessage: localize('zh_CN')
 })
 

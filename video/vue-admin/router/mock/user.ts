@@ -19,7 +19,7 @@ export default [
   },
   {
     url: '/api/login',
-    method: 'get',
+    method: 'post',
     response: () => {
       return {
         code: 200,

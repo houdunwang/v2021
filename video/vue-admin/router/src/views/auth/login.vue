@@ -1,42 +1,57 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import userApi from '@/apis/userApi';
+import v from '@/plugins/validate'
+import { store } from '@/utils';
 
-const form = reactive({
-	account: '',
-	password: ''
-})
+const { Form, Field, ErrorMessage } = v;
+
+const schema = {
+	account: { required: true, regex: /.+@.+|\d{11}/ },
+	password: { required: true, min: 3 },
+}
+const onSubmit = async (values) => {
+	const { result: { token } } = await userApi.login(values)
+	store.set('token', {
+		expire: 100, token
+	})
+}
 </script>
 
 <template>
-	<div class="bg-slate-300 h-screen flex justify-center items-start md:items-center p-5">
+	<Form class @submit="onSubmit" :validation-schema="schema" #default="{ errors }">
 		<div
 			class="w-[720px] translate-y-32 md:translate-y-0 bg-white md:grid grid-cols-2 rounded-md shadow-md overflow-hidden"
 		>
-			<div class="p-6">
-				<h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
-				<div class="mt-8">
-					<hdInput v-model="form.account" placeholder="请输入邮箱或手机号" />
-					<hdInput class="mt-5" placeholder="请输入登录密码" />
+			<div class="p-6 flex flex-col justify-between">
+				<div>
+					<h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
+					<div class="mt-8">
+						<Field name="account" value="admin@houdunren.com" class="hd-input" label="帐号" placeholder="请输入邮箱或手机号" />
+						<div v-if="errors.account" class="hd-error">请输入邮箱或手机号</div>
+						<Field name="password" value="admin888" class="hd-input mt-3" label="密码" type="password" />
+						<ErrorMessage name="password" as="div" class="hd-error" />
+					</div>
+					<hdButton />
+
+					<div class="flex justify-center mt-3">
+						<i class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"></i>
+					</div>
 				</div>
-				<hdButton />
 				<div class="flex gap-2 justify-center mt-5">
 					<a href class="text-xs text-gray-700">会员注册</a>
 					<a href class="text-xs text-gray-700">找回密码</a>
 					<a href class="text-xs text-gray-700">找回密码</a>
 				</div>
 			</div>
-			<div class="hidden md:block">
-				<img src="/images/login.jpg" class="h-80 w-full object-cover" />
+			<div class="hidden md:block relative">
+				<img src="/images/login.jpg" class="absolute h-full w-full object-cover" />
 			</div>
 		</div>
-	</div>
+	</Form>
 </template>
 
 <style lang="scss">
-// .hd-input {
-// 	@apply border w-full rounded-sm py-1 px-2 outline-none border-gray-200 placeholder:text-xs focus:ring-2 ring-offset-2 ring-violet-600 duration-300 focus:border-white;
-// }
-// .hd-button {
-// 	@apply bg-violet-700 text-white w-full py-2 rounded-md hover:bg-violet-500 duration-300;
-// }
+form {
+	@apply bg-slate-300 h-screen flex justify-center items-start md:items-center p-5;
+}
 </style>
