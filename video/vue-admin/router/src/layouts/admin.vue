@@ -1,7 +1,25 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MenuComponet from './admin/menu.vue'
+import Navbar from './admin/navbar.vue';
+import HistoryLink from './admin/historyLink.vue';
+</script>
 
 <template>
-  <router-view />
+  <div class="admin h-min-screen w-screen flex">
+    <MenuComponet class="hidden md:block" />
+
+    <div class="content flex-1 bg-gray-100">
+      <Navbar />
+      <HistoryLink />
+      <div class="m-5">
+        <router-view />
+      </div>
+    </div>
+  </div>
 </template>
 
-<style lang="scss"></style>
+<script lang="ts">
+export default {
+  route: { meta: { auth: true } }
+}
+</script>

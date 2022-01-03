@@ -1,19 +1,28 @@
 <script setup lang="ts">
-import userApi from '@/apis/userApi';
+import userApi from '@/apis/userApi'
 import v from '@/plugins/validate'
-import { store } from '@/utils';
+import { store } from '@/utils'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
-const { Form, Field, ErrorMessage } = v;
+const { Form, Field, ErrorMessage } = v
 
 const schema = {
 	account: { required: true, regex: /.+@.+|\d{11}/ },
 	password: { required: true, min: 3 },
 }
-const onSubmit = async (values) => {
-	const { result: { token } } = await userApi.login(values)
-	store.set('token', {
-		expire: 100, token
-	})
+const onSubmit = async (values: any) => {
+	const {
+		result: { token },
+	} = await userApi.login(values)
+	store.set('token', { token, })
+	router.push({ name: 'home' })
+
+}
+</script>
+<script lang="ts">
+export default {
+	route: { name: 'login', meta: { guest: true } }
 }
 </script>
 
@@ -26,12 +35,13 @@ const onSubmit = async (values) => {
 				<div>
 					<h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
 					<div class="mt-8">
-						<Field name="account" value="admin@houdunren.com" class="hd-input" label="帐号" placeholder="请输入邮箱或手机号" />
+						<Field name="account" value="admin@sdklsdklds" class="hd-input" label="帐号" placeholder="请输入邮箱或手机号" />
 						<div v-if="errors.account" class="hd-error">请输入邮箱或手机号</div>
-						<Field name="password" value="admin888" class="hd-input mt-3" label="密码" type="password" />
+						<Field name="password" value="admin888" class="hd-input mt-3" label="密码" type="password" placeholder="请输入登录密码" />
 						<ErrorMessage name="password" as="div" class="hd-error" />
 					</div>
-					<hdButton />
+
+					<hdButton class="w-full" />
 
 					<div class="flex justify-center mt-3">
 						<i class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"></i>
