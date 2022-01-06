@@ -23,7 +23,7 @@ nextTick(() => {
 </script>
 
 <template>
-	<div class="grid md:grid-flow-col gap-3 bg-gray-100">
+	<div class="grid md:grid-cols-4 gap-3 bg-gray-100">
 		<el-card
 			shadow="hover"
 			:body-style="{ padding: '20px' }"
@@ -34,7 +34,7 @@ nextTick(() => {
 			<template #header>
 				<div class="flex justify-between items-center">
 					{{ card.title }}
-					<el-tag type="danger" size="mini" effect="dark">月</el-tag>
+					<el-tag type="danger" size="small" effect="dark">月</el-tag>
 				</div>
 			</template>
 
@@ -49,13 +49,24 @@ nextTick(() => {
 		</el-card>
 	</div>
 
-	<div class="bg-white p-3 mt-5 grid md:grid-flow-col gap-3">
-		<div id="echart1" style="height:500px;" class="w-full md:w-[600px]"></div>
-		<div id="echart2" style="height:500px;" class="w-full md:w-[600px]"></div>
+	<div class="p-3 mt-5 grid md:grid-cols-2 gap-3">
+		<el-card shadow="always" :body-style="{ padding: '20px' }">
+			<template #header>
+				<div>用户统计</div>
+			</template>
+			<div id="echart1" class="h-72 w-full"></div>
+		</el-card>
+		<el-card shadow="always" :body-style="{ padding: '20px' }">
+			<template #header>
+				<div>销售客</div>
+			</template>
+			<div id="echart2" class="h-72 w-full"></div>
+		</el-card>
 	</div>
 </template>
 
 
 <style lang="scss">
 </style>
+
 

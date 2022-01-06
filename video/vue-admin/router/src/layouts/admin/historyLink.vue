@@ -14,6 +14,7 @@ const links = ref<{ title: string }[]>([
 	{ title: '用户管理' },
 	{ title: '销售总额' },
 ])
+
 </script>
 
 <template>

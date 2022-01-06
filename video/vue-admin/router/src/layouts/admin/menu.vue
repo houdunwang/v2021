@@ -1,54 +1,71 @@
-<script setup lang="ts">import { ref } from 'vue';
+<script setup lang="ts">
+import { ref, vModelCheckbox } from 'vue';
 
-interface IMenuItem {
-	title: string,
-	icon?: string,
-	active?: boolean
-}
+import { router } from '@/store/router'
+import { RouteRecordNormalized, RouteRecordRaw } from 'vue-router';
 
-interface IMenu extends IMenuItem {
-	children?: IMenuItem[]
-}
+// console.log(rout);
 
-const menus = ref<IMenu[]>([
-	{
-		title: '错误页面', icon: 'fab fa-bimobject', active: true,
-		children: [
-			{ title: '404页面', active: true },
-			{ title: '403页面' },
-			{ title: '500页面' }
-		]
-	},
-	{
-		title: '编辑器', icon: 'fab fa-app-store-ios', children: [
-			{ title: 'markdown编辑器' },
-			{ title: '富文本编辑器' }
-		]
-	},
-	{
-		title: '错误页面', icon: 'fab fa-bimobject', active: true,
-		children: [
-			{ title: '404页面', active: true },
-			{ title: '403页面' },
-			{ title: '500页面' }
-		]
-	},
-	{
-		title: '编辑器', icon: 'fab fa-app-store-ios', children: [
-			{ title: 'markdown编辑器' },
-			{ title: '富文本编辑器' }
-		]
-	}
-])
-const resetMenus = () => {
-	menus.value.forEach(pmenu => {
-		pmenu.active = false;
-		pmenu.children?.forEach(m => m.active = false)
+// interface IMenuItem {
+// 	title: string,
+// 	icon?: string,
+// 	active?: boolean
+// }
+
+// interface IMenu extends IMenuItem {
+// 	children?: IMenuItem[]
+// }
+
+// const menus = ref<IMenu[]>([
+// 	{
+// 		title: '错误页面', icon: 'fab fa-bimobject', active: true,
+// 		children: [
+// 			{ title: '404页面', active: true },
+// 			{ title: '403页面' },
+// 			{ title: '500页面' }
+// 		]
+// 	},
+// 	{
+// 		title: '编辑器', icon: 'fab fa-app-store-ios', children: [
+// 			{ title: 'markdown编辑器' },
+// 			{ title: '富文本编辑器' }
+// 		]
+// 	},
+// 	{
+// 		title: '错误页面', icon: 'fab fa-bimobject', active: true,
+// 		children: [
+// 			{ title: '404页面', active: true },
+// 			{ title: '403页面' },
+// 			{ title: '500页面' }
+// 		]
+// 	},
+// 	{
+// 		title: '编辑器', icon: 'fab fa-app-store-ios', children: [
+// 			{ title: 'markdown编辑器' },
+// 			{ title: '富文本编辑器' }
+// 		]
+// 	}
+// ])
+
+
+const routerStore = router()
+
+const reset = () => {
+	routerStore.routes.forEach(route => {
+		route.meta.isClick = false;
+		route.children.forEach(route => {
+			if (route.meta) {
+				route.meta.isClick = false
+			}
+		})
 	})
 }
-const handle = (pmenu: IMenuItem, cmenu?: IMenuItem) => {
-	resetMenus()
-	pmenu.active = true
+const handle = (pRoute: RouteRecordNormalized, cRoute?: RouteRecordRaw) => {
+	reset()
+	pRoute.meta.isClick = true
+	if (cRoute && cRoute.meta) {
+		cRoute.meta.isClick = true
+	}
 }
 </script>
 
@@ -60,22 +77,23 @@ const handle = (pmenu: IMenuItem, cmenu?: IMenuItem) => {
 		</div>
 		<!-- 菜单 -->
 		<div class="left-container">
-			<dl v-for="(menu,index) of menus" :key="index">
-				<dt @click="handle(menu)">
+			<dl v-for="(route,index) of routerStore.routes" :key="index">
+				<dt @click="handle(route)">
 					<section>
-						<i :class="menu.icon" class="fab fa-behance-square"></i>
-						<span class="text-md">{{ menu.title }}</span>
+						<i :class="route.meta.icon"></i>
+						<span class="text-md">{{ route.meta.title }}</span>
 					</section>
 					<section>
-						<i class="fas fa-angle-down duration-300" :class="{ 'rotate-180': menu.active }"></i>
+						<i class="fas fa-angle-down duration-300" :class="{ 'rotate-180': route.meta.isClick }"></i>
 					</section>
 				</dt>
 				<dd
-					v-show="menu.active"
-					:class="{ active: cmenu.active }"
-					v-for="(cmenu,key) of menu.children"
+					v-show="route.meta.isClick"
+					:class="{ active: childRoute.meta?.isClick }"
+					v-for="(childRoute,key) of route.children"
 					:key="key"
-				>{{ cmenu.title }}</dd>
+					@click="handle(route, childRoute)"
+				>{{ childRoute.meta?.title }}</dd>
 			</dl>
 		</div>
 	</div>

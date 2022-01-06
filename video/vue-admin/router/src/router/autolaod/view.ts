@@ -38,6 +38,4 @@ function getRouteByModule(file: string, module: { [key: string]: any }) {
   return Object.assign(route, module.default?.route)
 }
 
-const routes = env.VITE_ROUTER_AUTOLOAD ? getRoutes() : ([] as RouteRecordRaw[])
-
-export default routes
+export default getRoutes
