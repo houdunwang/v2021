@@ -1,53 +1,8 @@
 <script setup lang="ts">
-import { ref, vModelCheckbox } from 'vue';
 
 import { router } from '@/store/router'
-import { RouteRecordNormalized, RouteRecordRaw } from 'vue-router';
-
-// console.log(rout);
-
-// interface IMenuItem {
-// 	title: string,
-// 	icon?: string,
-// 	active?: boolean
-// }
-
-// interface IMenu extends IMenuItem {
-// 	children?: IMenuItem[]
-// }
-
-// const menus = ref<IMenu[]>([
-// 	{
-// 		title: '错误页面', icon: 'fab fa-bimobject', active: true,
-// 		children: [
-// 			{ title: '404页面', active: true },
-// 			{ title: '403页面' },
-// 			{ title: '500页面' }
-// 		]
-// 	},
-// 	{
-// 		title: '编辑器', icon: 'fab fa-app-store-ios', children: [
-// 			{ title: 'markdown编辑器' },
-// 			{ title: '富文本编辑器' }
-// 		]
-// 	},
-// 	{
-// 		title: '错误页面', icon: 'fab fa-bimobject', active: true,
-// 		children: [
-// 			{ title: '404页面', active: true },
-// 			{ title: '403页面' },
-// 			{ title: '500页面' }
-// 		]
-// 	},
-// 	{
-// 		title: '编辑器', icon: 'fab fa-app-store-ios', children: [
-// 			{ title: 'markdown编辑器' },
-// 			{ title: '富文本编辑器' }
-// 		]
-// 	}
-// ])
-
-
+import { RouteRecordNormalized, RouteRecordRaw, useRouter } from 'vue-router';
+const routeService = useRouter()
 const routerStore = router()
 
 const reset = () => {
@@ -65,6 +20,7 @@ const handle = (pRoute: RouteRecordNormalized, cRoute?: RouteRecordRaw) => {
 	pRoute.meta.isClick = true
 	if (cRoute && cRoute.meta) {
 		cRoute.meta.isClick = true
+		routeService.push(cRoute)
 	}
 }
 </script>

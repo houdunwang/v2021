@@ -1,4 +1,5 @@
 import { http } from '@/plugins/axios'
+
 export interface User {
   name: string
   age: number
@@ -7,7 +8,7 @@ export interface User {
 
 function info() {
   return http.request<User>({
-    url: `info`,
+    url: `user/info`,
   })
 }
 
@@ -18,7 +19,7 @@ function login(data: any) {
   return http.request<LoginInterface>({
     url: `login`,
     method: 'post',
-    data
+    data,
   })
 }
 

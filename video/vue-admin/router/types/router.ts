@@ -11,6 +11,6 @@ declare module 'vue-router' {
     icon?: string
     isClick?: boolean
     //访问权限
-    permissions: string[]
+    permissions?: string[]
   }
 }
