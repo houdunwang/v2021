@@ -1,6 +1,9 @@
-import user from '@/store/user'
-import { store } from '@/utils'
+import { CacheEnum } from './../enum/cacheEnum'
+import userStore from '@/store/userStroe'
+import util from '@/utils'
 import { RouteLocationNormalized, Router } from 'vue-router'
+import utils from '@/utils'
+import menuStore from '@/store/menuStore'
 
 class Guard {
   constructor(private router: Router) {}
@@ -16,11 +19,11 @@ class Guard {
   }
 
   private getUserInfo() {
-    if (this.token()) return user().getUserInfo()
+    if (this.token()) return userStore().getUserInfo()
   }
 
   private token(): string | null {
-    return store.get('token')?.token
+    return util.store.get(CacheEnum.TOKEN_NAME)
   }
 
   //游客
@@ -30,7 +33,11 @@ class Guard {
 
   //登录用户访问
   private isLogin(route: RouteLocationNormalized) {
-    return Boolean(!route.meta.auth || (route.meta.auth && this.token()))
+    const state = Boolean(!route.meta.auth || (route.meta.auth && this.token()))
+    if (state === false) {
+      utils.store.set(CacheEnum.REDIRECT_ROUTE_NAME, route.name)
+    }
+    return state
   }
 }
 

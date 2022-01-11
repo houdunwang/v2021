@@ -3,7 +3,7 @@ export default {
   name: 'editor',
   path: '/editor',
   component: () => import('@/layouts/admin.vue'),
-  meta: { title: '编辑器', icon: 'fas fa-baseball-ball', show: true, auth: true },
+  meta: { auth: true, menu: { title: '编辑器', icon: 'fas fa-baseball-ball' } },
   children: [
     {
       name: 'base',
@@ -14,7 +14,7 @@ export default {
       name: 'markdown',
       path: 'markdown',
       component: () => import('@/views/editor/markdown.vue'),
-      meta: { title: 'Markdown', show: true },
+      meta: { menu: { title: 'Markdown' } },
     },
   ],
 } as RouteRecordRaw

@@ -15,7 +15,13 @@ function info() {
 interface LoginInterface {
   token: string
 }
-function login(data: any) {
+
+export interface ILoginData {
+  account: string
+  password: string
+}
+
+export function login(data: ILoginData) {
   return http.request<LoginInterface>({
     url: `login`,
     method: 'post',
