@@ -8,5 +8,7 @@ declare module 'vue-router' {
     //访问权限
     permissions?: string[]
     menu?: IMenu
+    enterClass?: string
+    leaveClass?: string
   }
 }

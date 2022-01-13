@@ -2,7 +2,9 @@
 
 </script>
 
-<template>markdown</template>
+<template>
+	<div class>markdown</div>
+</template>
 
 <style lang="scss">
 </style>

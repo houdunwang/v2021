@@ -14,16 +14,23 @@ onBeforeRouteUpdate(() => {
 </script>
 
 <template>
-  <div class="admin min-h-screen w-screen flex">
-    <MenuComponet class="hidden md:block" />
+  <div class="admin h-screen w-screen grid md:grid-cols-[auto_1fr]">
+    <MenuComponet />
 
-    <div class="content flex-1 bg-gray-100">
-      <Navbar />
-      <HistoryLink />
-      <div class="m-5">
-        <router-view #default="{ Component }">
-          <Transition appear enter-active-class="animate__animated">
-            <component :is="Component" />
+    <div class="content bg-gray-100 grid grid-rows-[auto_1fr]">
+      <div class>
+        <Navbar />
+        <HistoryLink />
+      </div>
+      <div class="m-3 relative overflow-y-auto">
+        <router-view #default="{ Component, route }">
+          <Transition
+            appear
+            class="animate__animated"
+            :enter-active-class="route.meta.enterClass ?? 'animate__fadeInRight'"
+            :leave-active-class="route.meta.leaveClass ?? 'animate__fadeOutLeft'"
+          >
+            <component :is="Component" class="absolute w-full" />
           </Transition>
         </router-view>
       </div>
@@ -31,8 +38,11 @@ onBeforeRouteUpdate(() => {
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  route: { meta: { auth: true } }
+<style lang="scss" scoped>
+.animate__fadeInRight {
+  animation-duration: 0.5s;
 }
-</script>
+.animate__fadeOutLeft {
+  animation-duration: 0.3s;
+}
+</style>
