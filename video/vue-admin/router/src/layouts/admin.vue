@@ -2,15 +2,15 @@
 import MenuComponet from './admin/menu.vue'
 import Navbar from './admin/navbar.vue';
 import HistoryLink from './admin/historyLink.vue';
-import menuStore from '@/store/menuStore';
-import { onBeforeRouteUpdate, useRoute } from 'vue-router';
-const route = useRoute()
-const menu = menuStore()
-menu.init();
+import { useRoute } from 'vue-router';
+import { watch } from 'vue'
+import menu from '@/composables/menu';
 
-onBeforeRouteUpdate(() => {
+const route = useRoute()
+watch(route, () => {
   menu.addHistoryMenu(route)
-})
+}, { immediate: true })
+
 </script>
 
 <template>

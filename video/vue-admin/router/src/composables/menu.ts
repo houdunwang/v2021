@@ -7,13 +7,39 @@ import { CacheEnum } from '@/enum/cacheEnum'
 class Menu {
   public menus = ref<IMenu[]>([])
   public history = ref<IMenu[]>([])
-  public close = ref(true)
+  public close = ref(false)
+  public route = ref(null as null | RouteLocationNormalized)
 
   constructor() {
     this.menus.value = this.getMenuByRoute()
     this.history.value = utils.store.get(CacheEnum.HISTORY_MENU) ?? []
   }
 
+  removeHistoryMenu(menu: IMenu) {
+    const index = this.history.value.indexOf(menu)
+    this.history.value.splice(index, 1)
+  }
+
+  addHistoryMenu(route: RouteLocationNormalized) {
+    if (!route.meta?.menu) return
+    this.route.value = route
+
+    const menu: IMenu = { ...route.meta?.menu, route: route.name as string }
+    const isHas = this.history.value.some(menu => menu.route == route.name)
+    if (!isHas) this.history.value.unshift(menu)
+    if (this.history.value.length > 10) {
+      this.history.value.pop()
+    }
+
+    utils.store.set(CacheEnum.HISTORY_MENU, this.history.value)
+  }
+
+  toggleParentMenu(menu: IMenu) {
+    this.menus.value.forEach(m => {
+      m.isClick = false
+      if (m == menu) m.isClick = true
+    })
+  }
   toggleState() {
     this.close.value = !this.close.value
   }
