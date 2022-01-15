@@ -5,10 +5,9 @@ declare module 'vue-router' {
   interface RouteMeta {
     auth?: boolean
     guest?: boolean
-    //访问权限
-    permissions?: string[]
     menu?: IMenu
     enterClass?: string
     leaveClass?: string
+    permission?: string
   }
 }

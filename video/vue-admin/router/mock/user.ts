@@ -13,6 +13,7 @@ export default [
           name: '向军大叔',
           age: 18,
           avatar: '/images/xj.jpg',
+          permissions: ['article_edit', 'markdown_editor', 'base_editor'],
         },
       }
     },

@@ -1,4 +1,4 @@
-import { RouteLocationNormalized, RouteLocationNormalizedLoaded } from 'vue-router'
+import { RouteLocationNormalized, RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
 import { IMenu } from '#/menu'
 import { ref } from 'vue'
 import router from '@/router'
@@ -12,12 +12,23 @@ class Menu {
 
   constructor() {
     this.menus.value = this.getMenuByRoute()
-    this.history.value = utils.store.get(CacheEnum.HISTORY_MENU) ?? []
+    this.history.value = this.getHistoryMenu()
+  }
+
+  private getHistoryMenu() {
+    const routes = [] as RouteRecordRaw[]
+    router.getRoutes().map(r => routes.push(...r.children))
+
+    let menus: IMenu[] = utils.store.get(CacheEnum.HISTORY_MENU) ?? []
+    return menus.filter(m => {
+      return routes.some(r => r.name == m.route)
+    })
   }
 
   removeHistoryMenu(menu: IMenu) {
     const index = this.history.value.indexOf(menu)
     this.history.value.splice(index, 1)
+    utils.store.set(CacheEnum.HISTORY_MENU, this.history.value)
   }
 
   addHistoryMenu(route: RouteLocationNormalized) {
