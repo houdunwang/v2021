@@ -2,7 +2,7 @@
 import userApi from '@/apis/userApi'
 import { CacheEnum } from '@/enum/cacheEnum'
 import v from '@/plugins/validate'
-import utils, { store } from '@/utils'
+import utils from '@/utils'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
@@ -44,9 +44,9 @@ export default {
 					</div>
 				</div>
 				<div class="flex gap-2 justify-center mt-5">
-					<a href class="text-xs text-gray-700">会员注册</a>
-					<a href class="text-xs text-gray-700">找回密码</a>
-					<a href class="text-xs text-gray-700">找回密码</a>
+					<a href="#" class="text-xs text-gray-700">会员注册</a>
+					<a href="#" class="text-xs text-gray-700">找回密码</a>
+					<a href="#" class="text-xs text-gray-700">找回密码</a>
 				</div>
 			</div>
 			<div class="hidden md:block relative">

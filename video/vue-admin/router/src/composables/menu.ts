@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import router from '@/router'
 import utils from '@/utils'
 import { CacheEnum } from '@/enum/cacheEnum'
+
 class Menu {
   public menus = ref<IMenu[]>([])
   public history = ref<IMenu[]>([])

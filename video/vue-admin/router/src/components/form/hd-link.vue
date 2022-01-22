@@ -3,7 +3,7 @@
 </script>
 
 <template>
-	<a href class="text-xs text-gray-700 hover:text-violet-700">网站首页</a>
+	<router-link to="/" class="text-xs text-gray-700 hover:text-violet-700">网站首页</router-link>
 </template>
 
 <style lang="scss">

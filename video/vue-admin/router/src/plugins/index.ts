@@ -7,7 +7,7 @@ import setupPinia from './pinia'
 export function setupPlugins(app: App) {
   autoRegisterComponent(app)
   setupTailwindcss()
-  setupElementPlus(app)
+  setupElementPlus()
   setupPinia(app)
 }
 
