@@ -12,10 +12,12 @@ const schema = {
 	account: { required: true, regex: /.+@.+|\d{11}/ },
 	password: { required: true, min: 3 },
 }
+
 const onSubmit = async (values: any) => {
 	utils.user.login(values)
 }
 </script>
+
 <script lang="ts">
 export default {
 	route: { name: 'login', meta: { guest: true } }
@@ -37,8 +39,7 @@ export default {
 						<ErrorMessage name="password" as="div" class="hd-error" />
 					</div>
 
-					<hdButton class="w-full" />
-
+					<HdButton class="w-full" />
 					<div class="flex justify-center mt-3">
 						<i class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"></i>
 					</div>

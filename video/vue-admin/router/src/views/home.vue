@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
 
 <template>
 	<div class="h-screen w-screen bg-gray-700 flex flex-col justify-center items-center">
@@ -13,7 +15,8 @@
 
 <style lang="scss"></style>
 
-<script lang="ts">
+<script lang="ts">import { ElMessage } from 'element-plus';
+
 export default {
 	route: { name: 'home' }
 }
