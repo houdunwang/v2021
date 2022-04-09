@@ -20,7 +20,7 @@
 
 ## 在线直播
 
-<img src="../hdcms-php/public/static/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
+<img src="./assets/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
 
 
 
