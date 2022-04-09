@@ -8,34 +8,6 @@
 
 
 
-向军大叔每周更新视频，我们已经坚持很久了
-
-![xj-small](./assets/xj-small.png)
-
-
-
-
-
-## 历史仓库
-下面是每年我们录制视频教程的代码仓库地址（非常早的就没有罗列了）。大家可以结合视频再看代码，这样学习起来就非常轻松了。
-
-| 年份        | Gitee                                          | GitHub                              |
-| ----------- | ---------------------------------------------- | ----------------------------------- |
-| 2021年      | https://gitee.com/houdunren/houdunren.com-2021 | https://github.com/houdunwang/v2021 |
-| 2019~2020年 | https://gitee.com/houdunren/houdunren.com-2020 | https://github.com/houdunwang/v2020 |
-| 2015~2018年 | https://gitee.com/houdunren/houdunren.com-2015 | https://github.com/houdunwang/v2015 |
-
-
-
-## 晚八点直播
-
-我们会在晚上八点直播（注：特殊情况会请假），非常感谢大家的光临。
-
-| <img src="./assets/抖音.png" alt="抖音" style="height:500px" /> | <img src="./assets/bilibli.jpg" alt="bilibli" style="height:500px" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-
-
-
 ## 目录说明
 
 | 目录     | 说明             |
@@ -43,6 +15,27 @@
 | live     | 晚八点直播代码   |
 | video    | 视频代码         |
 | material | 图片、模板等素材 |
+
+
+
+## 在线直播
+
+<img src="../hdcms-php/public/static/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
+
+
+
+向军大叔会在晚上八点在抖音与B站进行直播，请扫描下方二维码关注。
+
+| 抖音                                            | Bilibili                                         |
+| ----------------------------------------------- | ------------------------------------------------ |
+| ![image-20210216220804022](./assets/douyin.png) | ![image-20210216220804022](./assets/bilibli.jpg) |
+
+
+
+
+## 历史仓库
+
+我们每年会创建新的代码仓库用于保存视频中的代码。你可以访问 [https://www.houdunren.com](https://www.houdunren.com) 访问每年的代码仓库。
 
 
 
