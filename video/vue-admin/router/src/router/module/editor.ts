@@ -6,9 +6,9 @@ export default {
   meta: { auth: true, menu: { title: '编辑器', icon: 'EditOne' } },
   children: [
     {
-      name: 'base',
-      path: 'base',
-      component: () => import('@/views/editor/base.vue'),
+      name: 'wangeditor',
+      path: 'wangeditor',
+      component: () => import('@/views/editor/wangeditor.vue'),
       meta: { permission: 'base_editor', menu: { title: '富文本编辑器' } },
     },
     {

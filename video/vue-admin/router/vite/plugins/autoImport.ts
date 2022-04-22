@@ -18,6 +18,6 @@ export default function autoImport(plugins: Plugin[]) {
       directoryAsNamespace: true,
       //指定类型声明文件，为true时在项目根目录创建
       dts: 'types/components.d.ts',
-    })
+    }),
   )
 }

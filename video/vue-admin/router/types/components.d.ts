@@ -13,6 +13,7 @@ declare module 'vue' {
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTag: typeof import('element-plus/es')['ElTag']
     HdButton: typeof import('./../src/components/hd/button.vue')['default']
+    HdError: typeof import('./../src/components/hd/error.vue')['default']
     HdInput: typeof import('./../src/components/hd/input.vue')['default']
     HdLink: typeof import('./../src/components/hd/link.vue')['default']
     MarkdownEditor: typeof import('./../src/components/markdown/editor.vue')['default']

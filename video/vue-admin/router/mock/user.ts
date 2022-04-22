@@ -8,8 +8,8 @@ export default [
       return {
         code: 200,
         message: '请示成功',
-        type: 'success',
-        result: {
+        status: 'success',
+        data: {
           name: '向军大叔',
           age: 18,
           avatar: '/images/xj.jpg',
@@ -25,8 +25,8 @@ export default [
       return {
         code: 200,
         message: '登录成功',
-        type: 'success',
-        result: {
+        status: 'success',
+        data: {
           token: Random.string(10),
         },
       }

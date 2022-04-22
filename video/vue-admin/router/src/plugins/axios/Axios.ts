@@ -1,5 +1,8 @@
+import { CacheEnum } from './../../enum/cacheEnum'
+import store from '@/utils/store'
 import axios, { AxiosRequestConfig } from 'axios'
-import { resolve } from 'path'
+import router from '@/router'
+import errorStore from '@/store/errorStore'
 
 export default class Axios {
   private instance
@@ -27,22 +30,35 @@ export default class Axios {
 
   private interceptorsRequest() {
     this.instance.interceptors.request.use(
-      config => {
+      (config) => {
+        config.headers = {
+          Authorization: 'Bearer ' + store.get(CacheEnum.TOKEN_NAME),
+        }
         return config
       },
-      error => {
+      (error) => {
         return Promise.reject(error)
-      }
+      },
     )
   }
   private interceptorsResponse() {
     this.instance.interceptors.response.use(
-      response => {
+      (response) => {
         return response
       },
-      error => {
+      (error) => {
+        switch (error.response.status) {
+          case 401:
+            store.remove(CacheEnum.TOKEN_NAME)
+            router.push({ name: 'login' })
+            break
+          case 422:
+            //后台表单验证错误
+            errorStore().errors = {}
+            break
+        }
         return Promise.reject(error)
-      }
+      },
     )
   }
 }

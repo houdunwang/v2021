@@ -26,5 +26,14 @@ export default ({ command, mode }: ConfigEnv) => {
         },
       },
     },
+    server: {
+      proxy: {
+        '/api': {
+          target: env.VITE_API_URL,
+          changeOrigin: true,
+          rewrite: (path: string) => path.replace(/^\/api/, ''),
+        },
+      },
+    },
   }
 }
