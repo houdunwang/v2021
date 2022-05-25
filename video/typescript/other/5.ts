@@ -1,0 +1,1 @@
+type HD = never | string | number;
